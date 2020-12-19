@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <property name="LOGS" value="./logs" />
+    <property name="CONSOLE_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %thread %-5level %logger{0} %L - %crlf(%msg){}%n" />
+    <property name="BLAHAAH" value="asdsad" />
+<!--    <property name="MASK" value="yada" />-->
+
+    <appender name="Console"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%white(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1.}): %msg %n</Pattern>
+        </layout>
+    </appender>
+
+    <!--<appender name="RollingFile"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/spring-boot-logger.log</file>
+        <encoder
+                class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %caller{1..2} %-5level-%msg %n </pattern>
+        </encoder>
+
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            &lt;!&ndash; rollover daily and when the file reaches 10 MegaBytes &ndash;&gt;
+            <fileNamePattern>${LOGS}/archived/spring-boot-logger-%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>-->
+
+
+
+
+    <root level="ERROR">
+        <!--<appender-ref ref="RollingFile" />-->
+        <appender-ref ref="Console" />
+    </root>
+    <logger  name="com.demo" level="DEBUG" additivity="false">
+        <!--<appender-ref ref="RollingFile" />-->
+        <appender-ref ref="Console" />
+    </logger>
+
+</configuration>
