@@ -1,7 +1,7 @@
 # text-matcher-demo
 a little HW assignment. testing the design and implementation of data pipeline
 
-# SmallID - Backend Dev Task ​v1
+# SomeID - Backend Dev Task
 
 Design and implement a simple Java program to find specific strings in a large text. The
 program should be composed of the following modules:
